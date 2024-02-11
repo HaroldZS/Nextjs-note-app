@@ -1,20 +1,32 @@
-export default function Home() {
+import { UserList } from "@components/UserList/UserList";
+import { User } from "@components/User/User";
+
+interface User {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
+}
+
+async function fetchUsers(): Promise<User[]> {
+  const res = await fetch("https://reqres.in/api/users");
+  const { data } = await res.json();
+  return data;
+}
+
+async function HomePage() {
+  const users = await fetchUsers();
+
   return (
     <>
-      <button className="btn">Button</button>
-      <button className="btn btn-primary">Button</button>
-      <button className="btn w-64 rounded-full">Button</button>
-      <br />
-      <button className="btn btn-primary">One</button>
-      <button className="btn btn-secondary">Two</button>
-      <button className="btn btn-accent btn-outline">Three</button>
-      <br />
-      <button className="btn rounded-full">One</button>
-      <button className="btn rounded-none px-16 py-10">Two</button>
-      <br />
-      <input type="checkbox" className="checkbox checkbox-secondary" />
-      <br />
-      <div className="glass h-64 w-64">Glass</div>
+      <UserList>
+        {users.map((user) => (
+          <User {...user} />
+        ))}
+      </UserList>
     </>
   );
 }
+
+export default HomePage;
