@@ -1,15 +1,8 @@
 import { UserList } from "@components/UserList/UserList";
 import { User } from "@components/User/User";
+import { User as UserInterface } from "@interfaces/User";
 
-interface User {
-  id: number;
-  email: string;
-  first_name: string;
-  last_name: string;
-  avatar: string;
-}
-
-async function fetchUsers(): Promise<User[]> {
+async function fetchUsers(): Promise<UserInterface[]> {
   const res = await fetch("https://reqres.in/api/users");
   const { data } = await res.json();
   return data;
