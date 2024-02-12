@@ -56,4 +56,4 @@ function ThemeController() {
   );
 }
 
-export { ThemeController };
+export default ThemeController;
