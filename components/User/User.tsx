@@ -4,9 +4,7 @@ import Link from "next/link";
 function User({ id, first_name, last_name, email, avatar }) {
   return (
     <Link href={`/users/${id}`} key={id}>
-      <li
-        className="bg-slate-400 mb-2 p-4 rounded-md text-black flex justify-between"
-      >
+      <li className="bg-slate-400 mb-2 p-4 rounded-md text-black flex justify-between">
         <div>
           <h5 className="font-bold">
             {id} {first_name} {last_name}

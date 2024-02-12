@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Navbar } from "@components/Navbar/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,8 +13,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
-      <body className="container mx-auto h-screen flex justify-center items-center" >{children}</body>
+    <html lang="en">
+      <body>
+        <Navbar />
+        <main className="container mx-auto h-screen flex justify-center items-center">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
