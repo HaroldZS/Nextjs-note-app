@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
+import { User } from "@/interfaces/User";
 
-function User({ id, first_name, last_name, email, avatar }) {
+function User({ id, first_name, last_name, email, avatar }: User) {
   return (
     <Link href={`/users/${id}`} key={id}>
       <li className="bg-slate-400 mb-2 p-4 rounded-md text-black flex justify-between">

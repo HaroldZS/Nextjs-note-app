@@ -1,6 +1,7 @@
 "use client";
+import { ReactNode } from "react";
 
-function UserList({ children }) {
+function UserList({ children }: { children: ReactNode }) {
   return <ul>{children}</ul>;
 }
 
