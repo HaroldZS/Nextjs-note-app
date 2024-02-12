@@ -1,4 +1,21 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
 function ThemeController() {
+  const [theme, setTheme] = useState<"dark" | "autumn">(() => {
+    const savedTheme = localStorage.getItem("theme") as "dark" | "autumn";
+    return savedTheme || "dark";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "dark" ? "autumn" : "dark"));
+  };
+
   return (
     <label className="flex cursor-pointer gap-2 p-5 text-base-content">
       <svg
@@ -16,8 +33,10 @@ function ThemeController() {
       </svg>
       <input
         type="checkbox"
-        value="autumn"
+        value={theme}
+        checked={theme === "autumn"}
         className="toggle theme-controller"
+        onChange={toggleTheme}
       />
       <svg
         xmlns="http://www.w3.org/2000/svg"
