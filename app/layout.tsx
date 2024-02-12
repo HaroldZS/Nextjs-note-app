@@ -19,7 +19,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <ThemeController />
-        <main className="container mx-auto mt-5 mb-10 h-auto flex justify-center items-center">
+        <main className="container mx-auto mt-5 mb-10 min-h-[calc(80vh-5rem)] flex justify-center items-center">
           {children}
         </main>
         <Footer />
