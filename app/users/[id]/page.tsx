@@ -1,4 +1,5 @@
 import { User } from "@interfaces/User";
+import Image from "next/image";
 
 interface Params {
   id: number;
@@ -15,9 +16,9 @@ async function UserPage({ params }: { params: Params }) {
 
   return (
     <div className="h-[calc(80vh-6rem)]">
-      <div className="card lg:card-side bg-slate-400 shadow-xl ">
+      <div className="card lg:card-side bg-base-300 shadow-xl text-base-content">
         <figure>
-          <img src={avatar} alt="Album" />
+          <Image src={avatar} height={100} width={100} alt="Album" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
