@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@components/Navbar/Navbar";
 import "./globals.css";
 import { Footer } from "@/components/Footer/Footer";
+import { ThemeController } from "@/components/ThemeController/ThemeController";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <main className="container mx-auto h-screen flex justify-center items-center">
+        <ThemeController />
+        <main className="container mx-auto mt-5 mb-10 h-auto flex justify-center items-center">
           {children}
         </main>
         <Footer />

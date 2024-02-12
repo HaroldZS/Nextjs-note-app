@@ -15,7 +15,7 @@ async function HomePage() {
     <>
       <UserList>
         {users.map((user) => (
-          <User {...user} />
+          <User {...user} key={user.id} />
         ))}
       </UserList>
     </>
