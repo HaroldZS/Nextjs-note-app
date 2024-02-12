@@ -11,11 +11,19 @@ async function getUser(id: number): Promise<User> {
 }
 
 async function UserPage({ params }: { params: Params }) {
-  const user = await getUser(params.id);
+  const { id, email, first_name, last_name, avatar } = await getUser(params.id);
 
   return (
-    <div>
-      <h1>{JSON.stringify(user)}</h1>
+    <div className="card lg:card-side bg-slate-400 shadow-xl ">
+      <figure>
+        <img src={avatar} alt="Album" />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">
+          {id}. {first_name} {last_name}
+        </h2>
+        <p>Email: {email}</p>
+      </div>
     </div>
   );
 }
