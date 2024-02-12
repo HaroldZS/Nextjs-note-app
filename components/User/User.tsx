@@ -10,7 +10,7 @@ function User({ id, first_name, last_name, email, avatar }: User) {
           <h5 className="font-bold">
             {id} {first_name} {last_name}
           </h5>
-          <p className="text-slate-100">email: {email}</p>
+          <p className="text-slate-100 pr-5">email: {email}</p>
         </div>
         <img src={avatar} className="rounded-full w-20" alt="user avatar" />
       </li>
