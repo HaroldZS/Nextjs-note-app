@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <div className="navbar bg-base-300">
+    <div className="navbar bg-base-300 text-base-content">
       <div className="flex-1">
         <Link className="btn btn-ghost text-xl" href="/">
           Home

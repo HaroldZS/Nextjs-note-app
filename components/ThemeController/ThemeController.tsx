@@ -1,6 +1,6 @@
 function ThemeController() {
   return (
-    <label className="flex cursor-pointer gap-2 p-5">
+    <label className="flex cursor-pointer gap-2 p-5 text-base-content">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
