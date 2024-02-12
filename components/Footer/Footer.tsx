@@ -1,6 +1,9 @@
 function Footer() {
   return (
-    <footer className="footer items-center p-4 bg-base-300 text-base-content" id="footer">
+    <footer
+      className="footer items-center p-4 bg-base-300 text-base-content fixed bottom-0 w-full"
+      id="footer"
+    >
       <aside className="items-center grid-flow-col">
         <p>Powered by HaroldZS</p>
       </aside>
